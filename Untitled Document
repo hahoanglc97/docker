@@ -1,0 +1,190 @@
+
+user docs :marketing
+BkA9JmD98zcxTmh9vGts
+
+whereis subl
+
+git tag v1.2.... : create tag
+git push --tags : push tag 
+// delete tag git 
+git tag -d "name tag"
+git push origin :refs/tags/"name t
+
+
+git checkout master 
+git merge hahoang
+git push origin master
+
+
+rm -rf var/view_preprocessed/*
+rm -rf pub/static/adminhtml/*
+php bin/magento setup:static-content:deploy -f
+
+database DEMO:http://db256mgn.izysync.com/index.php
+popup localhost DB demo : user: magenest_dev , pass: dev_2018_demo
+
+
+php bin/magento admin:user:create --admin-user='root' --admin-password='Hahoanglc97' --admin-email='info@domain.com' --admin-firstname='Ha' --admin-lastname='Hoang'
+freeshipingbar magenest123 Magenest123
+promobar - promobar123
+booking - booking123
+customer-customer123 ( customerAttribute)
+
+repo.magento.com account:
+e062ae4d489cbc2f9acd32a3fe134481
+125c6cc832f267091dd023e0d7056596
+
+using composer install packages : https://docs.google.com/document/d/1SsXIirwQjOh2e7cv9xJ2KHsZJVg-ieSKwwiFk8FUu3Q/edit
+
+php bin/magento deploy:mode:set developer
+php bin/magento deploy:mode:set production
+
+techcombank : 19032707029013
+
+download file : scp -P 2238 root@192.99.63.152:/home/jbcook/public_html/wp-content/image.tar.gz /home/viettel/Downloads
+
+[root@server public_html]# chmod -R 644 .
+[root@server public_html]# chmod -R 777 var/ generated/
+
+
+- chay 1 lan tren DB -> moi lan chay DB xuat Query vao file log
+SHOW VARIABLES LIKE '%log%';
+SET GLOBAL general_log = 1;( 1 - in ; 0 -k in )
+SET GLOBAL general_log_file = "/var/log/mysql/mysql_query.log";
+
+
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$attributeId = $objectManager->get(\Magento\Eav\Model\Entity\Attribute::class)
+
+
+mysqldump -u blogs -p m2_blogs > /home/blogs/backup.sql
+mysqldump -u appointment -p m2_appointment > /home/appointment/backup.sql
+mysqldump -u reservation -p m2_reservation > /home/reservation/backup.sql
+mysqldump -u rentalbooking -p m2_rentalbooking > /home/rentalbooking/backup.sql
+mysqldump -u gift-card -p m2_gift_card > /home/gift-card/backup.sql
+mysqldump -u salesforce -p m2_salesforce > /home/salesforce/backup.sql
+mysqldump -u supereasyseo -p m2_supereasyseo > /home/supereasyseo/backup.sql
+mysqldump -u worldpay -p m2_worldpay > /home/worldpay/backup.sql
+mysqldump -u hotelbooking -p m2_hotelbooking > /home/hotelbooking/backup.sql
+
+tar -zcf folder.tar.gz folder
+tar -zxvf file.tar.gz
+
+
+
+--------------Create virtual host--------------
+
+sudo nano /etc/hosts   127.0.0.1 <tên.com>
+cd /etc/apache2/sites-available/
+sudo cp 000-default.conf <tên>.com.conf
+sudo nano <tên>.com.conf
+ 
+        ServerName <tên>.com
+        ServerAlias <tên>.com
+
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/html/<thư mục>
+
+sudo a2ensite <tên>.com.conf 
+sudo service apache2 restart
+change link in phpmyadmin
+php bin/magento c:f config
+------------------------------------------------
+
+--get type entity_id or row_id
+
+\Magento\Framework\EntityManager\MetadataPool $metadataPool
+$this->metadataPool = $metadataPool;
+$entityMetadata = $this->metadataPool->getMetadata(\Magento\Catalog\Api\Data\ProductInterface::class);
+$entityId = $entityMetadata->getLinkField();
+
+
+git log --graph --simplify-by-decoration --pretty=format:'%d' --all
+
+
+-----add public key into demo----
+ssh-copy-id promobar@izysync.com
+
+
+
+
+copy code html css js website: wget -E -H -k -K -p http://example.com
+
+
+///lavifood 
+lavifood	s2z4fZ5nxhCWYxXZ
+git checkout -f
+git config core.fileMode false    
+
+//add user name git 
+git config user.name "Quach Minh Duc"
+git config user.email "ducqm@magenest.com"
+git config --global user.name "Quach Minh Duc"
+git config --global user.email "ducqm@magenest.com"
+Kiểm tra setting:
+git config user.name (scope: project)
+git config --global user.name (scope: khi project không set user.name)
+
+//cap quyen
+sudo nano /etc/apache2/env..
+APACHE_RUN_USER = 'ten'
+APACHE_RUN_GROUP = 'ten'
+
+
+//sua commit 
+git commit -m "M2_SL-048: Fix the default zoom for map in page details store" --amend
+git push origin develop -f  
+---neu dang rebase
+git checkout remove_old_code 
+git reset --hard origin/develop 
+git push origin remove_old_code -f 
+
+//docker 
+docker exec -it maziadb bash
+docker exec -it --user chung php /bin/bash
+docker service httpd
+php bin/magento setup:install --backend-frontname="admin" --key="admin" --session-save="files" --db-host="maziadb" --db-name="m23" --db-user="root" --db-password="1" --base-url="http://m23.local/" --base-url-secure="https://m23.local/" --admin-user="root" --admin-password="Hahoanglc97" --admin-email="admin@example.com" --admin-firstname="Admin" --admin-lastname="Admin" 
+
+
+docker-compose down
+docker-compose build ( khi sua dockerfile)
+docker-compose up -d
+
+
+
+php -dxdebug.remote_autostart=on bin/magento brand:rewrite
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

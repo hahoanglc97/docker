@@ -1,11 +1,11 @@
-version: '3'
+version: '2'
 
 services:
   php:
     build:
       context: ./php
       args:
-        USER_NAME: 'chung'
+        USER_NAME: 'hahoang'
         UID: '1000'
     container_name: php
     restart: always

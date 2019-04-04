@@ -27,13 +27,15 @@ xdebug.remote_handler=dbgp" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.i
 RUN mkdir -p /usr/local/bin
 COPY ./composer /usr/local/bin/
 
+RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+
 # Set memory_limit
 RUN echo "php_admin_value[memory_limit] = 512M" >> /usr/local/etc/php-fpm.d/www.conf
 RUN echo "memory_limit = 512M" >> /usr/local/etc/php/conf.d/memory_limit.ini
 
 # Set execution timeout
-RUN echo "request_terminate_timeout = 0" >> /usr/local/etc/php-fpm.d/www.conf
-RUN echo "max_execution_time = 0" >> /usr/local/etc/php/conf.d/max_execution_time.ini
+RUN echo "request_terminate_timeout = 3000" >> /usr/local/etc/php-fpm.d/www.conf
+RUN echo "max_execution_time = 3000" >> /usr/local/etc/php/conf.d/max_execution_time.ini
 
 # Install cron
 #RUN apt-get install -y cron
