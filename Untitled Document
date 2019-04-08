@@ -142,7 +142,10 @@ git push origin remove_old_code -f
 //docker 
 docker exec -it maziadb bash
 docker exec -it --user chung php /bin/bash
-docker service httpd
+docker restart httpd (restart mysql)
+docker restart maziadb (restart db)
+
+
 php bin/magento setup:install --backend-frontname="admin" --key="admin" --session-save="files" --db-host="maziadb" --db-name="m23" --db-user="root" --db-password="1" --base-url="http://m23.local/" --base-url-secure="https://m23.local/" --admin-user="root" --admin-password="Hahoanglc97" --admin-email="admin@example.com" --admin-firstname="Admin" --admin-lastname="Admin" 
 
 
