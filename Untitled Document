@@ -156,6 +156,11 @@ docker-compose up -d
 sudo mysql -h 10.5.0.6 -u root -p   
 
 
+//debug command line docker 
+
+ export PHP_IDE_CONFIG="serverName=bbm.local"
+php -dxdebug.remote_autostart=on bin/magento  category:rewrite
+
 
 
 
