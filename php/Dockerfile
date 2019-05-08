@@ -8,9 +8,9 @@ RUN apt-get -y update \
         zlib1g-dev \
         libpng-dev \
         libjpeg-dev \
-        libfreetype6-dev \
+        libfreetype6-dev \ 
         libjpeg62-turbo-dev
-RUN docker-php-ext-install -j$(nproc) iconv
+RUN docker-php-ext-install -j$(nproc) iconv gettext
 RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/
 RUN docker-php-ext-install pdo_mysql mcrypt xsl intl zip bcmath -j$(nproc) gd soap
 
@@ -34,8 +34,8 @@ RUN echo "php_admin_value[memory_limit] = 512M" >> /usr/local/etc/php-fpm.d/www.
 RUN echo "memory_limit = 512M" >> /usr/local/etc/php/conf.d/memory_limit.ini
 
 # Set execution timeout
-RUN echo "request_terminate_timeout = 3000" >> /usr/local/etc/php-fpm.d/www.conf
-RUN echo "max_execution_time = 3000" >> /usr/local/etc/php/conf.d/max_execution_time.ini
+RUN echo "request_terminate_timeout = 0" >> /usr/local/etc/php-fpm.d/www.conf
+RUN echo "max_execution_time = 0" >> /usr/local/etc/php/conf.d/max_execution_time.ini
 
 # Install cron
 #RUN apt-get install -y cron
