@@ -51,5 +51,7 @@ RUN useradd -m -U ${USER_NAME} -u ${UID} -p1 -s /bin/bash -G root -o
 # Edit PS1 in basrc
 RUN echo "PS1='${debian_chroot:+($debian_chroot)}\w\$ '" >> /home/${USER_NAME}/.bashrc
 
+
 # Change www-data user to ${USER_NAME}
 RUN sed -i -e "s/www-data/${USER_NAME}/" /usr/local/etc/php-fpm.d/www.conf
+USER ${USER_NAME}

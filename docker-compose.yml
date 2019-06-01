@@ -26,6 +26,20 @@ services:
       - "443:443"
     networks:
       docker-lamp:
+  nginx:
+    build:
+      context: ./nginx
+    container_name: nginx
+    restart: always
+    volumes:
+      - ./public_html/:/var/www/html/
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "8080:80"
+    privileged: true
+    networks:
+      docker-lamp:
+        ipv4_address: 10.5.0.9
   mariadb:
     image: mariadb:10.3
     container_name: maziadb
